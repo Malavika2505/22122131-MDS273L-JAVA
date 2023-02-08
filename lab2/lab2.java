@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 class lab2{
     public static void main(String[] args) { 
         Scanner obj=new Scanner(System.in);
@@ -6,7 +6,7 @@ class lab2{
         arr[0]="ARUN";
         arr[1]="ANU";
         arr[2]="Arathy";
-
+        int count=3;
 
         String c;
         do{
@@ -18,32 +18,68 @@ class lab2{
             System.out.println("Enter the name:");
             Scanner nm=new Scanner(System.in);
             String name=nm.nextLine();
-            arr[3]=name;
+            boolean found=false;
+            for(int i=0;i<count;i++){
+                if(name.equals(arr[i])){
+                    System.out.println("Name already exist");
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+                arr[count]=name;
+                 count++;
+            }
+           
             break;
             case 2:
             
 
-            System.out.println("Enter the name : ");
+            System.out.println("Enter the name to search: ");
             Scanner rm=new Scanner(System.in);
             String new_name=rm.nextLine();
-            for (String s : arr) {
-                if (new_name.equals(s)) {
-                    System.out.println("name is in the array");}
-            else {
-                    System.out.println("name is not in the array");
-                 }  
-
+            found=false;
+            for(int i=0;i<count;i++){
+                if(new_name.equals(arr[i])){
+                    System.out.println("Name is there in the array");
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+             System.out.println("Name not found");
             }
                break;
             case 3:
-            for(int k=0;k<1024;k++){
-                System.out.println("The names are:");
-                System.out.println(arr[k]);
+            System.out.println("Enter thename to remove");
+            Scanner r_m=new Scanner(System.in);
+            String r_name=r_m.nextLine();
+            int index=-1;
+            for(int i=0;i<count;i++){
+                if(r_name.equals(arr[i])){
+                  index=i;
+                  break;
+                }
             }
-
-
+            if(index!=-1){
+                for(int i=index;i<count-1;i++){
+                    arr[i]=arr[i+1];
+                }
+               count--;
+            }else{
+                System.out.println("Name not found");
+            }
+            break;
+            case 4:
+            for(int i=0;i<count;i++){
+                System.out.println(arr[i]);
+            }
+            break;
+            default:
+            System.out.print("Invalid");
+            break;
         }
-        System.out.println("Press 'y' to repeat");
+        System.out.println("Press 'y' to continue");
         Scanner ca=new Scanner(System.in);
          c=ca.nextLine();
         }
