@@ -11,32 +11,36 @@ import java.util.Scanner;
        return mean;
     }
 
-    static float Median(int[] arr){
+    static double Median(int[] arr){
         int count=arr.length;
        int n=arr.length;
-        int new_arr[]=new int[n];
        
+       int temp=0;
         for(int i=0;i<count;i++){
-            for(int j=0;(0<j)&&(j<count);j++){
-                int temp=0;
-                if(arr[i]<=arr[j]){
+             for(int j=i+1;j<count;j++){
+                 
+                 if(arr[i]>arr[j]){
                     temp=arr[i];
                     arr[i]=arr[j];
                     arr[j]=temp;
                     
                 }
-            }
-           new_arr[i]=arr[i]; 
+             }
+            
 
-        }
-       if(new_arr.length%2==0){
+         }
+         for(int i=0;i<count;i++){
+            System.out.println(arr[i]);
+         }
+        // System.out.println(arr);
+       if(arr.length%2==0){
         int a=(n/2);
         int b=a+1;
-       float median=(new_arr[a]+new_arr[b])/2;
+       double median=(arr[a-1]+arr[b-1])/(2.0);
        return median;
        }
        else{
-        float median=(new_arr[(n+1)/2]);
+        double median=((arr[(n)/2]));
         return median;
        }
     
@@ -44,29 +48,30 @@ import java.util.Scanner;
         }
 
     static float Mode(int []arr){
-       int  count=0;
+      
+      int max=0;
+      int max_val=0;
        int n=arr.length;
-       int m_arr[]=new int[n];
+       //int m_arr[]=new int[n];
        for(int i=0;i<n;i++){
-        for(int j=0;(0<j)&&(j<n);j++){
-            if(i==j){
+        int count=0;
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
                 count+=1;
             }
         }
+       if(count>max){
+        max=count;
+        max_val=arr[i];
+       }
+
        
-       m_arr[i]=count;
+      
        }
 
-       int i;
-       int max=0;
-
-       for( i=0;i<m_arr.length;i++){
-        if(m_arr[i]>max){
-            max=arr[i];
-        }
-       }
-     float mode=max;
-     return mode;  
+    
+     
+     return max_val;  
     }
 
     
@@ -92,11 +97,11 @@ import java.util.Scanner;
        }
        else if(fun==2){
         
-        float val2=Median( arr);
+        double val2=Median( arr);
         System.out.println("Median="+val2);
 
        }
-       else if(fun==2){
+       else if(fun==3){
         Mode( arr);
         float val3=Mode( arr);
        System.out.println("Mode="+val3);
