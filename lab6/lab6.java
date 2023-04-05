@@ -98,28 +98,51 @@ public class lab6 {
         return a;
 
         }
-        // static String[] word(String temp){
-        //     String[] word_1=temp.trim().split("\\s+");
-        //    String[] word_2=new String[1023];
-        //    int[] count=new int[1023];
-        //    int c=0;
-        //     for(int i=0;i<word_1.length;i++){
-        //         for(int k=0;k<word_2.length;k++){
-        //             if(word_1[i]!=word_2[k]){
-        //         for(int j=0;j>i;j++){
-        //             if(word_1[i]!=word_1[j]){
-                     
-        //              count[i]+=1; 
-        //              c+=1 ; 
-        //             }}
-        //         }word_2[c]=word_1[i];
-                 
-        //         }}return 
-           
-        // }
+
+
+        static void  word(String temp){
+            String[] words = temp.split("\\s+");
+            Set<String> uniqueElements = new HashSet<>(Arrays.asList(words));
+            String[] unique = uniqueElements.toArray(new String[uniqueElements.size()]);
+            int[] wordCounts = new int[unique.length];
+            for(int i=0;i<unique.length;i++){
+                int count_w=0;
+                for(int j=0;j<words.length;j++){
+                    if(unique[i]==words[j]){
+                        count_w=count_w+1;
+                    }
+                }wordCounts[i] = count_w;
+            }
+            System.out.println("Word counts:");
+         for (int i = 0; i < unique.length; i++) {
+    System.out.println(unique[i] + ": " + wordCounts[i]);
+         }
+         
+        }
 
         
-    
+    static void alphabet(String temp){
+            char[] unique = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            char[] alpha=new char[temp.length()];
+            for(int k=0;k<temp.length();k++){
+                alpha[k]=temp.charAt(k);
+            }
+            int[] wordCounts=new int[unique.length];
+            for(int i=0;i<unique.length;i++){
+                int count_w=0;
+                for(int j=0;j<alpha.length;j++){
+                    if(unique[i]==alpha[j]){
+                        count_w=count_w+1;
+                    }
+                }wordCounts[i] = count_w;
+            }
+            System.out.println("Word counts:");
+         for (int i = 0; i < unique.length; i++) {
+    System.out.println(unique[i] + ": " + wordCounts[i]);
+         }
+         
+        }
+
     
 
     public static void main(String[] args) {
@@ -135,6 +158,7 @@ public class lab6 {
                 
             }
             temp=temp.replaceAll("\\.", "");
+            
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -143,6 +167,8 @@ public class lab6 {
         vowel(temp);
        System.out.println("Numbers");
         num(temp);
+        word(temp);
+        alphabet(temp);
     }
 
 }
