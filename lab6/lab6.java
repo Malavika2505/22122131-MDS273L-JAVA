@@ -167,7 +167,9 @@ public class lab6 {
         vowel(temp);
        System.out.println("Numbers");
         num(temp);
+        System.out.println("word count");
         word(temp);
+        System.out.println("alphabet count");
         alphabet(temp);
     }
 
