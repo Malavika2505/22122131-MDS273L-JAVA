@@ -162,16 +162,16 @@ public static void main(String[] args ) {
             virCount++; 
         }
     }
-    // float[] seplen_set =new float[setCount];
-    // float[] sepwid_set =new float[setCount];
-    // float[] petlen_set =new float[setCount];
-    // float[] petwid_set=new float[setCount];
-    // for(int i =1;i<=setCount;i++){
-    //     seplen_set[i-1]=setosa[i][1];
-    //     sepwid_set[i-1]=setosa[i][2];
-    //     petlen_set[i-1]=setosa[i][3];
-    //     petwid_set[i-1]=setosa[i][4];
-    // }
+    float[] seplen_set =new float[setCount];
+    float[] sepwid_set =new float[setCount];
+    float[] petlen_set =new float[setCount];
+    float[] petwid_set=new float[setCount];
+    for(int i =1;i<setCount;i++){
+        seplen_set[i]=setosa[1][i];
+        sepwid_set[i]=setosa[2][i];
+        petlen_set[i]=setosa[3][i];
+        petwid_set[i]=setosa[4][i];
+    }
 
 System.out.println("###############################################");
 System.out.println("summary of sepal length:");
@@ -200,15 +200,15 @@ System.out.println("###############################################");
 
 System.out.println("summary of petal width:");
 Mean(petwid,n);
-//median(petwid,n);
+median(petwid,n);
 mode(petwid,n);
 max(petwid,n);
 min(petwid,n);
 System.out.println("###############################################");
 
-// System.out.println("summary of setosa sepal length:");
-// Mean(setosa[1],n);
-// median(setosa[1],n);
+System.out.println("summary of setosa sepal length:");
+ Mean(seplen_set,setCount);
+ median(seplen_set,setCount);
 // mode(setosa[1],n);
 // max(setosa[1],n);
 // min(setosa[1],n);

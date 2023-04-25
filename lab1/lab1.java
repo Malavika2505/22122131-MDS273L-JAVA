@@ -2,7 +2,7 @@ package lab1;
 
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
+//import javax.lang.model.util.ElementScanner14;
 
 class lab1 {
    public static void main(String[] args) {
