@@ -8,6 +8,15 @@ Phone<br>
 Class<br>
 Department<br>
 The class will have a constructor to initialize the values of the Student and a method to print the Details of the Student.<br>
+In the main-method class, create an array of Student Class to hold maximum details of 100 Students.<br>
+In the menu-driven program, the menu options will have<br>
+Add a student<br>
+Adds the details of 1 student to the array of Student<br>
+Search for a student<br>
+Search for the details of a student from the array of Student<br>
+(Optional) Searching can be done with Name & Register Number<br>
+Display all students<br>
+Displays the details of all students<br>
 
 Flow chart
 
