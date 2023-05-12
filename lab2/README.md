@@ -13,14 +13,14 @@ Flow chart
 Explanation
 
 1.The program starts by importing the necessary Java utility classes and defining a class called "lab2".<br>
-2.Inside the "lab2" class, the main method is defined, which is the entry point of the program. The main method creates an instance of the Scanner class to read user input, initializes an array called "arr" with three initial names, and sets a variable called "count" to 3.<b>
+2.Inside the "lab2" class, the main method is defined, which is the entry point of the program. The main method creates an instance of the Scanner class to read user input, initializes an array called "arr" with three initial names, and sets a variable called "count" to 3.<br>
 3.The program then enters a do-while loop that repeatedly asks the user to choose from four options: Enter a name, Search for a name, Remove a name, and Show all names.<b>
-4.Depending on the user's input, the program executes one of four cases using a switch statement.<b>
-In the "Enter a name" case, the program prompts the user to enter a name, checks if the name already exists in the array, and adds it to the array if it doesn't already exist.<b>
-5.In the "Search for a name" case, the program prompts the user to enter a name to search for, searches the array for the name, and displays a message indicating whether or not the name was found.<b>
-6.In the "Remove a name" case, the program prompts the user to enter a name to remove, searches the array for the name, removes the name from the array if it exists, and decrements the "count" variable.<b>
-7.In the "Show all names" case, the program displays all the names in the array<b>
-8.After each case is executed, the program prompts the user to press 'y' to continue or any other key to exit the loop.
+4.Depending on the user's input, the program executes one of four cases using a switch statement.<br>
+In the "Enter a name" case, the program prompts the user to enter a name, checks if the name already exists in the array, and adds it to the array if it doesn't already exist.<br>
+5.In the "Search for a name" case, the program prompts the user to enter a name to search for, searches the array for the name, and displays a message indicating whether or not the name was found.<br>
+6.In the "Remove a name" case, the program prompts the user to enter a name to remove, searches the array for the name, removes the name from the array if it exists, and decrements the "count" variable.<br>
+7.In the "Show all names" case, the program displays all the names in the array<br>
+8.After each case is executed, the program prompts the user to press 'y' to continue or any other key to exit the loop.<br>
 The program continues to loop until the user decides to exit by entering a key other than 'y'.
 Once the loop has exited, the program prints "program end" and terminates.
 
@@ -28,4 +28,3 @@ Once the loop has exited, the program prints "program end" and terminates.
 
 
 
-Regenerate response
